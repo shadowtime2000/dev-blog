@@ -12,6 +12,9 @@ jobs:
         with:
           persist-credentials: false 
 
+      - name: Create .env
+          run: echo 'NEXT_PUBLIC_USERNAME' > .env.production.local
+
       - name: Install and Build 🔧
         run: |
           npm ci
