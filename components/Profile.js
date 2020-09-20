@@ -9,7 +9,7 @@ import styles from '../styles/Profile.module.css'
 export default function Profile() {
 
     const [avatarURL, setAvatarURL] = useState("")
-    const [summary, setSummary] = useState(process.env.NEXT_PUBLIC_PLACEHOLDER_SUMMARY)
+    const [summary, setSummary] = useState("Summary Here")
 
     useEffect(() => {
         axios.get(`https://api.github.com/users/${process.env.NEXT_PUBLIC_USERNAME}`)
