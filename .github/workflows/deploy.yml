@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false 
 
       - name: Create .env
-          run: echo 'NEXT_PUBLIC_USERNAME' > .env.production.local
+          run: echo 'NEXT_PUBLIC_USERNAME=shadowtime2000' > .env.production.local
 
       - name: Install and Build 🔧
         run: |
