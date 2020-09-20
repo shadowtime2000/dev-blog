@@ -1,0 +1,9 @@
+.blogpost {
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.blogpost h4 {
+    margin-bottom: 0px;
+}
