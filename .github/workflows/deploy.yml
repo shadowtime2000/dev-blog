@@ -13,12 +13,15 @@ jobs:
           persist-credentials: false 
 
       - name: Create .env
-          run: echo 'NEXT_PUBLIC_USERNAME=shadowtime2000' > .env.production.local
+        run: echo 'NEXT_PUBLIC_USERNAME=shadowtime2000' > .env.production.local
 
       - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
+
+      - name: Create .nojekyll
+        run: echo '' > out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
