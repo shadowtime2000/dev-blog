@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        {posts.map((post, index) => <BlogPost publishedDate={post.readable_publish_date} postTitle={post.title} key={index} tags={post.tag_list} postLink={post.url} />)}
+        {posts.map((post, index) => <BlogPost commentsCount={post.comments_count} reactionCount={post.public_reactions_count} publishedDate={post.readable_publish_date} postTitle={post.title} key={index} tags={post.tag_list} postLink={post.url} />)}
       </main>
       <Profile />
       <Footer />
