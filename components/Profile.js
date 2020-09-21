@@ -12,15 +12,13 @@ export default function Profile() {
     const [summary, setSummary] = useState("Summary Here")
 
     useEffect(() => {
-        axios.get(`https://api.github.com/users/${process.env.NEXT_PUBLIC_USERNAME}`)
-            .then((res) => res.data)
-            .then(res => setAvatarURL(res.avatar_url))
-    }, [])
-
-    useEffect(() => {
         axios.get(`https://dev.to/api/users/by_username?url=${process.env.NEXT_PUBLIC_USERNAME}`)
         .then(res => res.data)
-        .then(res => setSummary(res.summary))
+        .then(res => {
+            setSummary(res.summary)
+            return res
+        })
+        .then(res => setAvatarURL(res.profile_image))
     }, [])
 
     return (
