@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        {posts.map((post, index) => <BlogPost postTitle={post.title} key={index} postLink={post.url} />)}
+        {posts.map((post, index) => <BlogPost postTitle={post.title} key={index} tags={post.tags} postLink={post.url} />)}
       </main>
       <Profile />
       <Footer />
