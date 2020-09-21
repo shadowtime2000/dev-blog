@@ -9,6 +9,7 @@ import styles from '../styles/Profile.module.css'
 export default function Profile() {
 
     const [avatarURL, setAvatarURL] = useState("")
+    const [websiteURL, setWebsiteURL] = useState(`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`)
     const [summary, setSummary] = useState("Summary Here")
 
     useEffect(() => {
@@ -18,12 +19,16 @@ export default function Profile() {
             setSummary(res.summary)
             return res
         })
-        .then(res => setAvatarURL(res.profile_image))
+        .then(res => {
+            setAvatarURL(res.profile_image)
+            return res
+        })
+        .then(res => setWebsiteURL(res.website_url || websiteURL))
     }, [])
 
     return (
         <div className={styles.profile}>
-            <h3><Link href={`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`} color="inherit" target="_blank">{process.env.NEXT_PUBLIC_USERNAME}</Link></h3>
+            <h3><Link href={websiteURL} color="inherit" target="_blank">{process.env.NEXT_PUBLIC_USERNAME}</Link></h3>
             <p>
                 {summary}
             </p>
