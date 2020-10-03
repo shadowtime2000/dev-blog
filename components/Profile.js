@@ -33,7 +33,7 @@ export default function Profile() {
                 {summary}
             </p>
 
-            <img width={50} src={avatarURL} />
+            <img width={50} src={avatarURL} alt={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV profile image`} />
         </div>
     )
 }
