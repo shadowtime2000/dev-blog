@@ -1,13 +1,13 @@
 .blogpost {
-    width: 100%;
-    text-align: center;
-    margin: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 20px;
 }
 
 .blogpost h4 {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .blogpost a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
