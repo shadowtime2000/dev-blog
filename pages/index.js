@@ -39,6 +39,7 @@ export default function Home() {
             key={index}
             tags={post.tag_list}
             postLink={post.url}
+            coverImage={post.cover_image}
           />
         ))}
       </main>

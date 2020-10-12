@@ -7,11 +7,13 @@ export default function BlogPost({
   publishedDate,
   reactionCount,
   commentsCount,
+  coverImage,
 }) {
   return (
     <footer className={styles.blogpost}>
+      <img src={coverImage} width={window.innerWidth * 0.15} />
       <h4>
-        <span class="date">{publishedDate} - </span>
+        <span className="date">{publishedDate} - </span>
         <a href={postLink} target="_blank">
           {postTitle}
         </a>
