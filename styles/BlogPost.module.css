@@ -11,3 +11,7 @@
 .blogpost a:hover {
   text-decoration: underline;
 }
+
+.blogpost img {
+  width: 40%;
+}
