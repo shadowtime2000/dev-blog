@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
+import styles from "../styles/Profile.module.css";
 
 import axios from "axios";
-
 import { Link } from "@material-ui/core";
-
-import styles from "../styles/Profile.module.css";
 
 export default function Profile() {
   const [avatarURL, setAvatarURL] = useState("");
