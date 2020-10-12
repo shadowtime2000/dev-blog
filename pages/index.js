@@ -26,6 +26,11 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
+        />
         <title>{process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog</title>
       </Head>
       <main>
