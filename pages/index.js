@@ -18,7 +18,7 @@ setInterval(() => {
 
 //TODO: Support pagination
 
-export default function Home() {
+function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -59,3 +59,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
