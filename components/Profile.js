@@ -21,9 +21,7 @@ export default function Profile() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://dev.to/api/users/by_username?url=${process.env.NEXT_PUBLIC_USERNAME}`
-      )
+      .get(`/api/profile`)
       .then((res) => res.data)
       .then((res) => {
         setSummary(res.summary);
