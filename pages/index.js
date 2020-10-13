@@ -23,9 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://dev.to/api/articles?username=${process.env.NEXT_PUBLIC_USERNAME}`
-      )
+      .get(`/api/posts`)
       .then((res) => res.data)
       .then((res) => setPosts(res))
       .catch((err) => console.log);
@@ -47,12 +45,12 @@ export default function Home() {
           <BlogPost
             commentsCount={post.comments_count}
             reactionCount={post.public_reactions_count}
-            publishedDate={post.readable_publish_date}
             postTitle={post.title}
             key={index}
             tags={post.tag_list}
             postLink={post.url}
             coverImage={post.cover_image}
+            views={post.page_views_count === 0 ? "<25" : post.page_views_count}
           />
         ))}
       </main>

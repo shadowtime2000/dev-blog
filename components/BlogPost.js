@@ -4,16 +4,15 @@ export default function BlogPost({
   postLink,
   postTitle,
   tags,
-  publishedDate,
   reactionCount,
   commentsCount,
   coverImage,
+  views,
 }) {
   return (
     <footer className={styles.blogpost}>
       <img src={coverImage} />
       <h4>
-        <span className="date">{publishedDate} - </span>
         <a href={postLink} target="_blank">
           {postTitle}
         </a>
@@ -30,6 +29,9 @@ export default function BlogPost({
       </div>
       <div>
         <strong>Comments</strong> - {commentsCount}
+      </div>
+      <div>
+        <strong>Views</strong> - {views}
       </div>
     </footer>
   );
