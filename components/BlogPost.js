@@ -11,7 +11,7 @@ export default function BlogPost({
 }) {
   return (
     <footer className={styles.blogpost}>
-      <img src={coverImage} />
+      <img src={coverImage} alt={`The cover image for ${postTitle}`} />
       <h4>
         <a href={postLink} target="_blank">
           {postTitle}
