@@ -33,7 +33,10 @@ function Home() {
     <div className={styles.container}>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="author" content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`} />
+        <meta
+          name="author"
+          content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
+        />
         <meta
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
