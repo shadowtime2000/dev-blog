@@ -31,7 +31,11 @@ export default function Profile() {
         setAvatarURL(res.profile_image);
         return res;
       })
-      .then((res) => setWebsiteURL(res.website_url == undefined ? websiteURL : res.website_url));
+      .then((res) =>
+        setWebsiteURL(
+          res.website_url == undefined ? websiteURL : res.website_url
+        )
+      );
   }, [timer.secondsPassed]);
 
   return (
