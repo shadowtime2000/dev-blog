@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 import styles from "../styles/Header.module.css";
 
 import { Link } from "@material-ui/core";
 
-export default function Header() {
+function Header() {
   return (
     <div>
       <h1 className={styles.title}>
@@ -17,3 +19,5 @@ export default function Header() {
     </div>
   );
 }
+
+export default memo(Header, () => true);

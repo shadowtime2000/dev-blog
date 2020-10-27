@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { Link } from "@material-ui/core";
 import styles from "../styles/Footer.module.css";
 
-export default function Footer() {
+function Footer() {
   return (
     <div className={styles.footer}>
       Created with ❤️ by{" "}
@@ -11,3 +12,5 @@ export default function Footer() {
     </div>
   );
 }
+
+export default memo(Footer, () => true);
