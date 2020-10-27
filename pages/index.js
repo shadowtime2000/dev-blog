@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 
 //TODO: Support pagination
 
-function Home({ summary, avatarURL, websiteURL }) {
+function Home({ summary, profile_image, website_url }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ function Home({ summary, avatarURL, websiteURL }) {
       </main>
       <Profile
         summary={summary}
-        avatarURL={avatarURL}
-        websiteURL={websiteURL}
+        avatarURL={profile_image}
+        websiteURL={website_url}
       />
       <Footer />
     </div>
@@ -62,7 +62,7 @@ function Home({ summary, avatarURL, websiteURL }) {
 
 export async function getServerSideProps() {
   const {
-    data: { summary, profile_image, website_url },
+    data: { summary, profile_image },
   } = await axios.get(
     `https://dev.to/api/users/by_username?url=${process.env.NEXT_PUBLIC_USERNAME}`
   );
@@ -70,7 +70,7 @@ export async function getServerSideProps() {
     props: {
       summary,
       profile_image,
-      website_url,
+      website_url: `https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`,
     },
   };
 }
