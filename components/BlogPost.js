@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "../styles/BlogPost.module.css";
 
 export default function BlogPost({
@@ -12,7 +13,7 @@ export default function BlogPost({
   return (
     <footer className={styles.blogpost}>
       {coverImage != undefined ? (
-        <img src={coverImage} alt={`The cover image for ${postTitle}`} />
+        <Image src={coverImage} alt={`The cover image for ${postTitle}`} />
       ) : undefined}
       <h4>
         <a href={postLink} target="_blank">
