@@ -74,7 +74,11 @@ function Home() {
           />
         ))}
       </main>
-      <Profile summary={summary} avatarURL={avatarURL} websiteURL={websiteURL} />
+      <Profile
+        summary={summary}
+        avatarURL={avatarURL}
+        websiteURL={websiteURL}
+      />
       <Footer />
     </div>
   );

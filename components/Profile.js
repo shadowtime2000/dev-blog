@@ -1,9 +1,9 @@
+import { memo } from "react";
 import styles from "../styles/Profile.module.css";
 
 import { Link } from "@material-ui/core";
 
-export default function Profile({ avatarURL, websiteURL, summary }) {
-
+function Profile({ avatarURL, websiteURL, summary }) {
   return (
     <div className={styles.profile}>
       <h3>
@@ -21,3 +21,11 @@ export default function Profile({ avatarURL, websiteURL, summary }) {
     </div>
   );
 }
+
+export default memo(
+  Profile,
+  (prevProps, nextProps) =>
+    prevProps.avatarURL === nextProps.avatarURL &&
+    prevProps.summary === nextProps.summary &&
+    prevProps.websiteURL === nextProps.websiteURL
+);
