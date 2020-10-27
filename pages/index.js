@@ -39,7 +39,7 @@ function Home() {
         <Header />
         {posts.map((post, index) => (
           <BlogPost
-            commentsCount={post.comments_count}
+            commentsCount={post.comments_count} 
             reactionCount={post.public_reactions_count}
             postTitle={post.title}
             key={index}
