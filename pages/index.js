@@ -12,6 +12,30 @@ import Footer from "../components/Footer";
 
 function Home() {
   const [posts, setPosts] = useState([]);
+  const [avatarURL, setAvatarURL] = useState("");
+  const [websiteURL, setWebsiteURL] = useState(
+    `https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`
+  );
+  const [summary, setSummary] = useState("Summary Here");
+
+  useEffect(() => {
+    axios
+      .get(`/api/profile`)
+      .then((res) => res.data)
+      .then((res) => {
+        setSummary(res.summary);
+        return res;
+      })
+      .then((res) => {
+        setAvatarURL(res.profile_image);
+        return res;
+      })
+      .then((res) =>
+        setWebsiteURL(
+          res.website_url == undefined ? websiteURL : res.website_url
+        )
+      );
+  }, []);
 
   useEffect(() => {
     axios
@@ -50,7 +74,7 @@ function Home() {
           />
         ))}
       </main>
-      <Profile />
+      <Profile summary={summary} avatarURL={avatarURL} websiteURL={websiteURL} />
       <Footer />
     </div>
   );
