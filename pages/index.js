@@ -10,17 +10,7 @@ import Footer from "../components/Footer";
 
 //TODO: Support pagination
 
-function Home({ summary, profile_image, website_url }) {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`/api/posts`)
-      .then((res) => res.data)
-      .then((res) => setPosts(res))
-      .catch((err) => console.log);
-  }, []);
-
+function Home({ posts, summary, profile_image, website_url }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -61,6 +51,12 @@ function Home({ summary, profile_image, website_url }) {
 }
 
 export async function getServerSideProps() {
+  const { data: posts } = await axios.get(
+    "https://dev.to/api/articles/me/published",
+    {
+      headers: { "api-key": process.env.API_KEY },
+    }
+  );
   const {
     data: { summary, profile_image },
   } = await axios.get(
@@ -71,6 +67,7 @@ export async function getServerSideProps() {
       summary,
       profile_image,
       website_url: `https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`,
+      posts,
     },
   };
 }
