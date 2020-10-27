@@ -10,32 +10,8 @@ import Footer from "../components/Footer";
 
 //TODO: Support pagination
 
-function Home() {
+function Home({ summary, avatarURL, websiteURL }) {
   const [posts, setPosts] = useState([]);
-  const [avatarURL, setAvatarURL] = useState("");
-  const [websiteURL, setWebsiteURL] = useState(
-    `https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`
-  );
-  const [summary, setSummary] = useState("Summary Here");
-
-  useEffect(() => {
-    axios
-      .get(`/api/profile`)
-      .then((res) => res.data)
-      .then((res) => {
-        setSummary(res.summary);
-        return res;
-      })
-      .then((res) => {
-        setAvatarURL(res.profile_image);
-        return res;
-      })
-      .then((res) =>
-        setWebsiteURL(
-          res.website_url == undefined ? websiteURL : res.website_url
-        )
-      );
-  }, []);
 
   useEffect(() => {
     axios
@@ -82,6 +58,21 @@ function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const {
+    data: { summary, profile_image, website_url },
+  } = await axios.get(
+    `https://dev.to/api/users/by_username?url=${process.env.NEXT_PUBLIC_USERNAME}`
+  );
+  return {
+    props: {
+      summary,
+      profile_image,
+      website_url,
+    },
+  };
 }
 
 export default Home;
