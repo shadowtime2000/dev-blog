@@ -8,14 +8,6 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 
-import Timer from "../state/Timer";
-
-const timer = new Timer();
-
-setInterval(() => {
-  timer.increment();
-}, 1000);
-
 //TODO: Support pagination
 
 function Home() {
@@ -27,7 +19,7 @@ function Home() {
       .then((res) => res.data)
       .then((res) => setPosts(res))
       .catch((err) => console.log);
-  }, [timer.secondsPassed]);
+  }, []);
 
   return (
     <div className={styles.container}>

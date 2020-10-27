@@ -4,14 +4,6 @@ import styles from "../styles/Profile.module.css";
 import axios from "axios";
 import { Link } from "@material-ui/core";
 
-import Timer from "../state/Timer";
-
-const timer = new Timer();
-
-setInterval(() => {
-  timer.increment();
-}, 1000);
-
 export default function Profile() {
   const [avatarURL, setAvatarURL] = useState("");
   const [websiteURL, setWebsiteURL] = useState(
@@ -36,7 +28,7 @@ export default function Profile() {
           res.website_url == undefined ? websiteURL : res.website_url
         )
       );
-  }, [timer.secondsPassed]);
+  }, []);
 
   return (
     <div className={styles.profile}>
