@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import styles from "../styles/Profile.module.css";
 
 import axios from "axios";
@@ -48,7 +47,7 @@ export default function Profile() {
       </h3>
       <p>{summary}</p>
 
-      <Image
+      <img
         width={50}
         src={avatarURL}
         alt={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV profile image`}
