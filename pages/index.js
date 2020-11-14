@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 
+import LazyHydrate from "react-lazy-hydration";
+
 import BlogPost from "../components/BlogPost";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
@@ -26,18 +28,20 @@ function Home({ posts, summary, profile_image, website_url }) {
       </Head>
       <main>
         <Header />
-        {posts.map((post, index) => (
-          <BlogPost
-            commentsCount={post.comments_count}
-            reactionCount={post.public_reactions_count}
-            postTitle={post.title}
-            key={index}
-            tags={post.tag_list}
-            postLink={post.url}
-            coverImage={post.cover_image}
-            views={post.page_views_count === 0 ? "<25" : post.page_views_count}
-          />
-        ))}
+        <LazyHydrate ssrOnly>
+          {posts.map((post, index) => (
+            <BlogPost
+              commentsCount={post.comments_count}
+              reactionCount={post.public_reactions_count}
+              postTitle={post.title}
+              key={index}
+              tags={post.tag_list}
+              postLink={post.url}
+              coverImage={post.cover_image}
+              views={post.page_views_count === 0 ? "<25" : post.page_views_count}
+            />
+          ))}
+        </LazyHydrate>
       </main>
       <Profile
         summary={summary}
