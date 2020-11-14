@@ -10,7 +10,7 @@ export default function BlogPost({
   views,
 }) {
   return (
-    <footer className={styles.blogpost}>
+    <div className={styles.blogpost}>
       {coverImage != undefined ? (
         <img src={coverImage} alt={`The cover image for ${postTitle}`} />
       ) : undefined}
@@ -35,6 +35,6 @@ export default function BlogPost({
       <div>
         <strong>Views</strong> - {views}
       </div>
-    </footer>
+    </div>
   );
 }
