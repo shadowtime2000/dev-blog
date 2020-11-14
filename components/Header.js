@@ -6,7 +6,7 @@ import { Link } from "@material-ui/core";
 
 function Header() {
   return (
-    <div>
+    <>
       <h1 className={styles.title}>
         <Link
           href={`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`}
@@ -16,7 +16,7 @@ function Header() {
         </Link>
         's DEV Blog
       </h1>
-    </div>
+    </>
   );
 }
 
