@@ -21,7 +21,7 @@ export default function BlogPost({
       </h4>
       <div>
         {tags.map((tag, index) => (
-          <a target="_blank" key={index} href={`https://dev.to/t/${tag}`}>
+          <a target="_blank" rel="noopener" key={index} href={`https://dev.to/t/${tag}`}>
             #{tag}{" "}
           </a>
         ))}
