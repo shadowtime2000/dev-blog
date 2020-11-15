@@ -1,7 +1,7 @@
 .blogpost {
   width: 100%;
   text-align: center;
-  margin: 20px;
+  margin: calc(35% * 1px);
 }
 
 .blogpost h4 {
