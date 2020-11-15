@@ -8,10 +8,6 @@
   margin-bottom: 0px;
 }
 
-.blogpost a {
-  font-size: clamp(10px, 3vw, 18px);
-}
-
 .blogpost a:hover {
   text-decoration: underline;
 }
