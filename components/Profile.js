@@ -22,10 +22,4 @@ function Profile({ avatarURL, websiteURL, summary }) {
   );
 }
 
-export default memo(
-  Profile,
-  (prevProps, nextProps) =>
-    prevProps.avatarURL === nextProps.avatarURL &&
-    prevProps.summary === nextProps.summary &&
-    prevProps.websiteURL === nextProps.websiteURL
-);
+export default memo(Profile, () => true);

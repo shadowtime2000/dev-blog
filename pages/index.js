@@ -38,7 +38,9 @@ function Home({ posts, summary, profile_image, website_url }) {
               tags={post.tag_list}
               postLink={post.url}
               coverImage={post.cover_image}
-              views={post.page_views_count === 0 ? "<25" : post.page_views_count}
+              views={
+                post.page_views_count === 0 ? "<25" : post.page_views_count
+              }
             />
           ))}
         </LazyHydrate>

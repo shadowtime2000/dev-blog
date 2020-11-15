@@ -1,15 +1,15 @@
 module.exports = {
-    async headers() {
-        return [
-            {
-                source: "/",
-                headers: [
-                    {
-                        key: "X-Robots-Tag",
-                        value: ""
-                    }
-                ]
-            }
-        ]
-    }
-}
+  async headers() {
+    return [
+      {
+        source: "/",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "",
+          },
+        ],
+      },
+    ];
+  },
+};
