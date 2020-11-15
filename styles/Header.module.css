@@ -1,7 +1,8 @@
 .title {
-  margin: 15px;
-  line-height: 1.15;
-  font-size: 4rem;
+  /*margin: 15px;*/
+  margin: 1.25%;
+  /*line-height: 1.15;*/
+  font-size: clamp(20px, 5vw, 38px);
 }
 .title,
 .description {
