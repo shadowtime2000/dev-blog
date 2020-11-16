@@ -55,7 +55,7 @@ function Home({ posts, summary, profile_image, website_url }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data: posts } = await axios.get(
     "https://dev.to/api/articles/me/published",
     {
@@ -74,6 +74,7 @@ export async function getServerSideProps() {
       website_url: `https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`,
       posts,
     },
+    revalidate: 30,
   };
 }
 
