@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.profile a {
+  color: inherit;
+}
+
 .profile a:hover {
   text-decoration: underline;
 }

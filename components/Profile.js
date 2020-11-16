@@ -1,15 +1,13 @@
 import { memo } from "react";
 import styles from "../styles/Profile.module.css";
 
-import { Link } from "@material-ui/core";
-
 function Profile({ avatarURL, websiteURL, summary }) {
   return (
     <div className={styles.profile}>
       <h3>
-        <Link href={websiteURL} color="inherit" target="_blank">
+        <a href={websiteURL} color="inherit" target="_blank">
           {process.env.NEXT_PUBLIC_USERNAME}
-        </Link>
+        </a>
       </h3>
       <p>{summary}</p>
 
