@@ -1,11 +1,12 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Post.module.css";
 import axios from "axios";
 
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
-function Post({ postContent, title }) {
+function Post({ postContent, title, url }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,6 +22,8 @@ function Post({ postContent, title }) {
       </Head>
       <main>
         <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
+        <hr />
+        <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
       </main>
     </div>
   );
@@ -35,12 +38,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const {
-    data: { body_markdown, title },
+    data: { body_markdown, title, url },
   } = await axios.get(`https://dev.to/api/articles/${ctx.params.id}`);
   return {
     props: {
       postContent: body_markdown,
       title,
+      url
     },
     revalidate: 30,
   };
