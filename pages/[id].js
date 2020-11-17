@@ -25,9 +25,8 @@ function Post({ postContent, title, url, summary, profile_image }) {
         </title>
       </Head>
       <main>
-          <Header />
-          <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
-        <hr />
+        <Header />
+        <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
         <Profile
           summary={summary}
