@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import styles from "../styles/Post.module.css";
 import axios from "axios";
 
@@ -7,7 +6,6 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
 function Post({ postContent, title }) {
-  const { query } = useRouter();
   return (
     <div className={styles.container}>
       <Head>
