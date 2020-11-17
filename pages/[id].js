@@ -8,6 +8,7 @@ import gfm from "remark-gfm";
 
 import Header from "../components/Header";
 import Profile from "../components/Profile";
+import Footer from "../components/Footer";
 
 function Post({ postContent, title, url, summary, profile_image }) {
   console.log(profile_image);
@@ -34,6 +35,7 @@ function Post({ postContent, title, url, summary, profile_image }) {
           websiteURL={`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`}
           avatarURL={profile_image}
         />
+        <Footer />
       </main>
     </div>
   );
