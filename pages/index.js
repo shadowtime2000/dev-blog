@@ -16,10 +16,7 @@ function Home({ posts, summary, profile_image, website_url }) {
     <div className={styles.container}>
       <Head>
         <meta charSet="utf-8" />
-        <meta
-          name="author"
-          content={process.env.NEXT_PUBLIC_USERNAME}
-        />
+        <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
         <meta
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
@@ -36,11 +33,11 @@ function Home({ posts, summary, profile_image, website_url }) {
               postTitle={post.title}
               key={index}
               tags={post.tag_list}
-              postLink={post.url}
               coverImage={post.cover_image}
               views={
                 post.page_views_count === 0 ? "<25" : post.page_views_count
               }
+              id={post.id}
             />
           ))}
         </LazyHydrate>

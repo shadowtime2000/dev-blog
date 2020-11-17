@@ -1,13 +1,14 @@
+import Link from "next/link";
 import styles from "../styles/BlogPost.module.css";
 
 export default function BlogPost({
-  postLink,
   postTitle,
   tags,
   reactionCount,
   commentsCount,
   coverImage,
   views,
+  id,
 }) {
   return (
     <div className={styles.blogpost}>
@@ -15,9 +16,9 @@ export default function BlogPost({
         <img src={coverImage} alt={`The cover image for ${postTitle}`} />
       ) : undefined}
       <h4>
-        <a href={postLink} rel="noopener" target="_blank">
+        <Link href={`/${id}`} rel="noopener" target="_blank">
           {postTitle}
-        </a>
+        </Link>
       </h4>
       <div>
         {tags.map((tag, index) => (

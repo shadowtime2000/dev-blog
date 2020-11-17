@@ -9,10 +9,7 @@ function About({ profile_image, summary, github_username, twitter_username }) {
     <div className={styles.container}>
       <Head>
         <meta charSet="utf-8" />
-        <meta
-          name="author"
-          content={process.env.NEXT_PUBLIC_USERNAME}
-        />
+        <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
         <meta
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
