@@ -7,8 +7,10 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
 import Header from "../components/Header";
+import Profile from "../components/Profile";
 
-function Post({ postContent, title, url }) {
+function Post({ postContent, title, url, summary, profile_image }) {
+  console.log(profile_image);
   return (
     <div className={styles.container}>
       <Head>
@@ -27,6 +29,11 @@ function Post({ postContent, title, url }) {
         <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
         <hr />
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
+        <Profile
+          summary={summary}
+          websiteURL={`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`}
+          avatarURL={profile_image}
+        />
       </main>
     </div>
   );
@@ -43,11 +50,18 @@ export async function getStaticProps(ctx) {
   const {
     data: { body_markdown, title, url },
   } = await axios.get(`https://dev.to/api/articles/${ctx.params.id}`);
+  const {
+    data: { summary, profile_image },
+  } = await axios.get(
+    `https://dev.to/api/users/by_username?url=${process.env.NEXT_PUBLIC_USERNAME}`
+  );
   return {
     props: {
       postContent: body_markdown,
       title,
-      url
+      url,
+      summary,
+      profile_image,
     },
     revalidate: 30,
   };
