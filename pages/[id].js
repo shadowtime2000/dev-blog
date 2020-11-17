@@ -5,7 +5,6 @@ import axios from "axios";
 
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
-import LazyHydrate from "react-lazy-hydration";
 
 import Header from "../components/Header";
 import Profile from "../components/Profile";
@@ -27,10 +26,8 @@ function Post({ postContent, title, url, summary, profile_image }) {
         </title>
       </Head>
       <main>
-        <LazyHydrate ssrOnly>
           <Header />
           <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
-        </LazyHydrate>
         <hr />
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
         <Profile
