@@ -18,7 +18,7 @@ function Home({ posts, summary, profile_image, website_url }) {
         <meta charSet="utf-8" />
         <meta
           name="author"
-          content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
+          content={process.env.NEXT_PUBLIC_USERNAME}
         />
         <meta
           name="description"

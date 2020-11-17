@@ -11,7 +11,7 @@ function About({ profile_image, summary, github_username, twitter_username }) {
         <meta charSet="utf-8" />
         <meta
           name="author"
-          content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
+          content={process.env.NEXT_PUBLIC_USERNAME}
         />
         <meta
           name="description"
