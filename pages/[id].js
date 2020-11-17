@@ -6,6 +6,8 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
+import Header from "../components/Header";
+
 function Post({ postContent, title, url }) {
   return (
     <div className={styles.container}>
@@ -21,6 +23,7 @@ function Post({ postContent, title, url }) {
         </title>
       </Head>
       <main>
+        <Header />
         <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
         <hr />
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
