@@ -11,7 +11,6 @@ import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 
 function Post({ postContent, title, url, summary, profile_image }) {
-  console.log(profile_image);
   return (
     <div className={styles.container}>
       <Head>
