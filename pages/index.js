@@ -25,22 +25,18 @@ function Home({ posts, summary, profile_image, website_url }) {
       </Head>
       <main>
         <Header />
-        <LazyHydrate ssrOnly>
-          {posts.map((post, index) => (
-            <BlogPost
-              commentsCount={post.comments_count}
-              reactionCount={post.public_reactions_count}
-              postTitle={post.title}
-              key={index}
-              tags={post.tag_list}
-              coverImage={post.cover_image}
-              views={
-                post.page_views_count === 0 ? "<25" : post.page_views_count
-              }
-              id={post.id}
-            />
-          ))}
-        </LazyHydrate>
+        {posts.map((post, index) => (
+          <BlogPost
+            commentsCount={post.comments_count}
+            reactionCount={post.public_reactions_count}
+            postTitle={post.title}
+            key={index}
+            tags={post.tag_list}
+            coverImage={post.cover_image}
+            views={post.page_views_count === 0 ? "<25" : post.page_views_count}
+            id={post.id}
+          />
+        ))}
       </main>
       <Profile
         summary={summary}
