@@ -2,8 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import axios from "axios";
 
-import LazyHydrate from "react-lazy-hydration";
-
 import BlogPost from "../components/BlogPost";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
