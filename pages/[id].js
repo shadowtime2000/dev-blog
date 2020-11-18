@@ -10,7 +10,13 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 
-function Post({ postContent, title, url, summary, profile_image }) {
+function Post({
+  postContent,
+  title,
+  url,
+  summary,
+  profile_image,
+}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,7 +54,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const {
-    data: { body_markdown, title, url },
+    data: { body_markdown, title, url, },
   } = await axios.get(`https://dev.to/api/articles/${ctx.params.id}`);
   const {
     data: { summary, profile_image },
