@@ -19,6 +19,12 @@ function Home({ posts, summary, profile_image, website_url }) {
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
         />
+        {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
+          <meta
+            name="msvalidate.01"
+            content={process.env.NEXT_PUBLIC_BING_WEBMASTER}
+          />
+        ) : undefined}
         <title>{process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog</title>
       </Head>
       <main>
