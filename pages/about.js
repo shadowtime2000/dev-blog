@@ -14,6 +14,12 @@ function About({ profile_image, summary, github_username, twitter_username }) {
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
         />
+        {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
+          <meta
+            name="msvalidate.01"
+            content={process.env.NEXT_PUBLIC_BING_WEBMASTER}
+          />
+        ) : undefined}
         <title>About | {process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog</title>
       </Head>
       <main>

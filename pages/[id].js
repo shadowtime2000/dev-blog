@@ -20,6 +20,12 @@ function Post({ postContent, title, url, summary, profile_image }) {
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
         />
+        {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
+          <meta
+            name="msvalidate.01"
+            content={process.env.NEXT_PUBLIC_BING_WEBMASTER}
+          />
+        ) : undefined}
         <title>
           {title} | {process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog
         </title>
