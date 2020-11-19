@@ -27,6 +27,7 @@ export default function BlogPost({
             rel="noopener"
             key={index}
             href={`https://dev.to/t/${tag}`}
+            className={styles.tag}
           >
             #{tag}{" "}
           </a>
