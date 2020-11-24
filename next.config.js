@@ -2,7 +2,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/:path",
+        source: "/",
         headers: [
           {
             key: "X-Robots-Tag",
