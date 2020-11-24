@@ -6,7 +6,6 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
-import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 
@@ -31,7 +30,6 @@ function Post({ postContent, title, url, summary, profile_image }) {
         </title>
       </Head>
       <main>
-        <Header />
         <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
         <Profile
