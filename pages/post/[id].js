@@ -9,7 +9,7 @@ import gfm from "remark-gfm";
 import Profile from "../../components/Profile";
 import Footer from "../../components/Footer";
 
-function Post({ postContent, title, url, summary, profile_image }) {
+function Post({ postContent, title, url, summary, profile_image, tags }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -19,6 +19,7 @@ function Post({ postContent, title, url, summary, profile_image }) {
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
         />
+        <meta name="keywords" content={tags.join(", ")} />
         {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
           <meta
             name="msvalidate.01"
@@ -52,7 +53,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const {
-    data: { body_markdown, title, url },
+    data: { body_markdown, title, url, tags },
   } = await axios.get(`https://dev.to/api/articles/${ctx.params.id}`);
   const {
     data: { summary, profile_image },
@@ -66,6 +67,7 @@ export async function getStaticProps(ctx) {
       url,
       summary,
       profile_image,
+      tags,
     },
     revalidate: 30,
   };
