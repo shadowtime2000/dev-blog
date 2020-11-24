@@ -1,10 +1,13 @@
 .footer {
-  width: 100%;
+  @apply w-full text-center;
   height: 25%;
   border-top: 1px solid #eaeaea;
-  text-align: center;
+}
+
+.footer a {
+  @apply text-indigo-700;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+  @apply underline;
 }

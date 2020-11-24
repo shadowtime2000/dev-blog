@@ -1,16 +1,13 @@
 .title {
+  @apply text-center;
   margin: 1.25%;
   font-size: 2.5em;
 }
-.title,
-.description {
-  text-align: center;
-}
 
 .title a {
-  color: #3f51b5;
+  @apply text-indigo-700;
 }
 
 .title a:hover {
-  text-decoration: underline;
+  @apply underline;
 }
