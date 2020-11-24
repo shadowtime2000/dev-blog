@@ -10,6 +10,15 @@ module.exports = {
           },
         ],
       },
+      {
+        source: "/post/:id",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: ""
+          }
+        ]
+      }
     ];
   },
 };
