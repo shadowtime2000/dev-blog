@@ -6,8 +6,8 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 
-import Profile from "../components/Profile";
-import Footer from "../components/Footer";
+import Profile from "../../components/Profile";
+import Footer from "../../components/Footer";
 
 function Post({ postContent, title, url, summary, profile_image }) {
   return (

@@ -16,7 +16,7 @@ export default function BlogPost({
         <img src={coverImage} alt={`The cover image for ${postTitle}`} />
       ) : undefined}
       <h4>
-        <Link href={`/${id}`} rel="noopener" target="_blank">
+        <Link href={`/post/${id}`} rel="noopener" target="_blank">
           {postTitle}
         </Link>
       </h4>
