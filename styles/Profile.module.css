@@ -8,5 +8,5 @@
 }
 
 .profile a:hover {
-  text-decoration: underline;
+  @apply underline;
 }
