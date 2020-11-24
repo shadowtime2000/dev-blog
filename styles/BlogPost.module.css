@@ -1,22 +1,21 @@
 .blogpost {
-  width: 100%;
-  text-align: center;
+  @apply w-full text-center;
   margin: calc(35% * 1px);
 }
 
 .blogpost h4 {
+  @apply mb-0;
   font-size: 1em;
-  margin-bottom: 0px;
 }
 
 .blogpost a:hover {
-  text-decoration: underline;
+  @apply underline;
 }
 
 .blogpost img {
-  width: 40%;
+  @apply w-2/5;
 }
 
 .tag {
-  font-size: 1rem;
+  @apply text-base;
 }

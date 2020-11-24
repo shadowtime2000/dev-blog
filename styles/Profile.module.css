@@ -1,8 +1,7 @@
 .profile {
-  width: 100%;
+  @apply text-center w-full;
   height: 25%;
   border-top: 1px solid #eaeaea;
-  text-align: center;
 }
 
 .profile a {
@@ -10,5 +9,5 @@
 }
 
 .profile a:hover {
-  text-decoration: underline;
+  @apply underline;
 }

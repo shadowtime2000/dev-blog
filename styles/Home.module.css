@@ -1,8 +1,4 @@
 .container {
-  min-height: 100vh;
+  @apply min-h-screen flex flex-col justify-center items-center;
   padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
