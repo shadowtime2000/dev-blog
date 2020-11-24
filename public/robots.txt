@@ -1,4 +1,1 @@
 Sitemap: /api/sitemap.xml
-
-User-agent: *
-Disallow /api/
