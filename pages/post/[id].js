@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Post.module.css";
+import styles from "../../styles/Post.module.css";
 import axios from "axios";
 
 import ReactMarkdown from "react-markdown";
