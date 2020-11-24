@@ -3,7 +3,7 @@ import styles from "../styles/Profile.module.css";
 
 function Profile({ avatarURL, websiteURL, summary }) {
   return (
-    <div className={styles.profile + " text-center w-full"}>
+    <div className={styles.profile}>
       <h3>
         <a href={websiteURL} color="inherit" target="_blank">
           {process.env.NEXT_PUBLIC_USERNAME}
