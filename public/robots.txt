@@ -1,4 +1,4 @@
 Sitemap: /api/sitemap.xml
 
 User-agent: *
-Disallow /api/*
+Disallow /api/
