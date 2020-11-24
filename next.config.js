@@ -15,10 +15,10 @@ module.exports = {
         headers: [
           {
             key: "X-Robots-Tag",
-            value: ""
-          }
-        ]
-      }
+            value: "",
+          },
+        ],
+      },
     ];
   },
 };

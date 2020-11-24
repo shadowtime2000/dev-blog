@@ -25,6 +25,12 @@ export default async (req, res) => {
       });
     });
 
+    smStream.write({
+      url: "/",
+      changefreq: "weekly",
+      priority: 0.85,
+    });
+
     // End sitemap stream
     smStream.end();
 
