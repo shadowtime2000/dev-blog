@@ -10,3 +10,7 @@
 .container a:hover {
   @apply underline;
 }
+
+.tag {
+  @apply text-gray-600;
+}
