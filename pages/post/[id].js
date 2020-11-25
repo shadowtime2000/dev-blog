@@ -19,7 +19,7 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
           name="description"
           content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
         />
-        { tags ? <meta name="keywords" content={tags.join(", ")} /> : undefined }
+        {tags ? <meta name="keywords" content={tags.join(", ")} /> : undefined}
         {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
           <meta
             name="msvalidate.01"
@@ -31,7 +31,18 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
         </title>
       </Head>
       <main>
-        {tags ? tags.map((tag, i) => <a key={i} href={`https://dev.to/t/${tag}`} target="_blank" className={styles.tag}>#{tag} </a>) : undefined}
+        {tags
+          ? tags.map((tag, i) => (
+              <a
+                key={i}
+                href={`https://dev.to/t/${tag}`}
+                target="_blank"
+                className={styles.tag}
+              >
+                #{tag}{" "}
+              </a>
+            ))
+          : undefined}
         <ReactMarkdown plugins={[gfm]}>{postContent}</ReactMarkdown>
         <Link href="/">Back</Link> | <a href={url}>DEV.to</a>
         <Profile
