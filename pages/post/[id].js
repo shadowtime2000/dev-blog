@@ -10,7 +10,7 @@ import gfm from "remark-gfm";
 import Profile from "../../components/Profile";
 import Footer from "../../components/Footer";
 
-function Post({ postContent, title, url, summary, profile_image, tags }) {
+function Post({ postContent, title, url, summary, profile_image, tags, published_at }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -32,6 +32,7 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
             url,
             type: "article",
             article: {
+              publishedTime: published_at,
               authors: [`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`],
               tags,
             },
@@ -76,7 +77,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
   const {
-    data: { body_markdown, title, url, tags },
+    data: { body_markdown, title, url, tags, published_at },
   } = await axios.get(`https://dev.to/api/articles/${ctx.params.id}`);
   const {
     data: { summary, profile_image },
@@ -91,6 +92,7 @@ export async function getStaticProps(ctx) {
       summary,
       profile_image,
       tags,
+      published_at
     },
     revalidate: 30,
   };
