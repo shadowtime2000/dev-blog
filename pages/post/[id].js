@@ -14,6 +14,7 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
     <div className={styles.container}>
       <Head>
         <meta charSet="utf-8" />
+        <meta name="title" content={title} />
         <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
         <meta
           name="description"
