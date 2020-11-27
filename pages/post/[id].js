@@ -17,7 +17,7 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
         <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
         <meta
           name="description"
-          content={`${process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog`}
+          content={`${title}`}
         />
         {tags ? <meta name="keywords" content={tags.join(", ")} /> : undefined}
         {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
