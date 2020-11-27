@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Post.module.css";
 import axios from "axios";
+import { NextSeo } from "next-seo";
 
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
@@ -16,10 +17,7 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
         <meta charSet="utf-8" />
         <meta name="title" content={title} />
         <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
-        <meta
-          name="description"
-          content={`${title}`}
-        />
+        <meta name="description" content={`${title}`} />
         {tags ? <meta name="keywords" content={tags.join(", ")} /> : undefined}
         {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
           <meta
@@ -27,6 +25,18 @@ function Post({ postContent, title, url, summary, profile_image, tags }) {
             content={process.env.NEXT_PUBLIC_BING_WEBMASTER}
           />
         ) : undefined}
+        <NextSeo
+          openGraph={{
+            title,
+            description: title,
+            url,
+            type: "article",
+            article: {
+              authors: [`https://dev.to/${process.env.NEXT_PUBLIC_USERNAME}`],
+              tags,
+            },
+          }}
+        />
         <title>
           {title} | {process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog
         </title>
