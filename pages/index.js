@@ -25,6 +25,12 @@ function Home({ posts, summary, profile_image, website_url }) {
             content={process.env.NEXT_PUBLIC_BING_WEBMASTER}
           />
         ) : undefined}
+        {process.env.NEXT_PUBLIC_PAYMENT_POINTER ? (
+          <meta
+            name="monetization"
+            content ={process.env.NEXT_PUBLIC_PAYMENT_POINTER}
+          />
+        ) : undefined}
         <title>{process.env.NEXT_PUBLIC_USERNAME}'s DEV Blog</title>
       </Head>
       <main>
