@@ -19,6 +19,12 @@ function Post({ postContent, title, url, summary, profile_image, tags, published
         <meta name="author" content={process.env.NEXT_PUBLIC_USERNAME} />
         <meta name="description" content={`${title}`} />
         {tags ? <meta name="keywords" content={tags.join(", ")} /> : undefined}
+        {process.env.NEXT_PUBLIC_PAYMENT_POINTER ? (
+          <meta
+            name="monetization"
+            content ={process.env.NEXT_PUBLIC_PAYMENT_POINTER}
+          />
+        ) : undefined}
         {process.env.NEXT_PUBLIC_BING_WEBMASTER ? (
           <meta
             name="msvalidate.01"
